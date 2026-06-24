@@ -1,12 +1,7 @@
 import axios from "axios";
 
-let baseURL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
-if (baseURL && !baseURL.endsWith('/api')) {
-  baseURL = baseURL.replace(/\/+$/, '') + '/api';
-}
-
 const api = axios.create({
-  baseURL,
+  baseURL: "https://alumni-portal-backend-uk27.onrender.com/api",
 });
 
 api.interceptors.request.use(
